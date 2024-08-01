@@ -1,14 +1,15 @@
-pipeline { 
+pipeline{
     agent any
-    stages {
-        stage('Pipeline Stages'){
-            steps {
-                sh "ls"
+    stages{ 
+        stage("make a directory"){
+            steps { 
+                sh "mkdir ~/jenkins-demo || true"
             }
         }
-        stage(‘second stage’){
-            steps {
-                sh “pwd”
-
+        stage("add files"){
+            steps { 
+                sh "touch ~/jenkins-demo/file1.txt"
             }
         }
+    }
+}
